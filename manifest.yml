@@ -1,2 +1,10 @@
 applications:
   - name: swagger-petstore-manuel
+    health-check-type: process
+    env:
+      SWAGGER_URL: .app.sandpit-00.partnerfoundry.com
+      SWAGGER_BASE_PATH: /v2
+      SWAGGER_HOST: swagger-petstore-manuel
+    buildpacks:
+      - swagger_petstore_buildpack
+      - java_buildpack
